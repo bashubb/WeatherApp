@@ -35,6 +35,7 @@ class WeatherManager: ObservableObject {
                 do {
                     
                     let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
                     
                     let data = try decoder.decode([Weather].self, from: data!)
                     
