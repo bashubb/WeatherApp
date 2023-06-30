@@ -9,20 +9,19 @@ import Foundation
 
 struct Weather: Decodable {
     
-    var cord: CoordinateIno
+    var coord: CoordinateIno
     var weather: [WeatherInfo]
     var base: String
-    var main: [MainInfo]
+    var main: MainInfo
     var visibility: Int
     var wind: WindInfo
-    var rain: RainInfo
     var clouds: CloudsInfo
     var dt: Int
     var sys: SysInfo
     var timezone: Int
     var id: Int
     var name: String
-    var code: Int
+    var cod: Int
     
 }
 
@@ -37,7 +36,7 @@ struct WeatherInfo: Decodable{
     var id: Int
     var main: String
     var description: String
-    var incon: String
+    var icon: String
 }
 
 struct MainInfo: Decodable {
@@ -48,24 +47,15 @@ struct MainInfo: Decodable {
     var tempMax: Double
     var pressure: Int
     var humidity: Int
-    var seaLever: Int
-    var grndLevel: Int
 }
 
 struct WindInfo: Decodable {
     
     var speed: Double
     var deg: Int
-    var gust: Double
+   
 }
 
-struct RainInfo: Decodable {
-    var oneHour: Double
-    
-    enum CodingKeys: String, CodingKey {
-        case oneHour = "1h"
-    }
-}
 
 struct CloudsInfo: Decodable {
     
